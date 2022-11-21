@@ -2,8 +2,7 @@ from managed_db import *
 import streamlit as st
 import numpy as np
 import pandas as pd
-import os
-import joblib
+import pickle
 import hashlib
 import matplotlib.pyplot as plt
 import matplotlib
@@ -48,7 +47,7 @@ def get_feature_val(val):
 
 
 def load_model(model_file):
-    loaded_model = joblib.load(open(os.path.join(model_file), "rb"))
+    loaded_model = pickle.load(open(model_file, 'rb'))
     return loaded_model
 
 
